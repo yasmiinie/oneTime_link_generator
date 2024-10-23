@@ -2,14 +2,16 @@ import pandas as pd # type: ignore
 from flask import Flask, jsonify, request
 from pymongo import MongoClient
 from flask_cors import CORS
-import hashlib
+import hashlib ,os
+from dotenv import load_dotenv
 
 
+load_dotenv()
 app = Flask(__name__)
 CORS(app)
 
-# MongoDB connection
-client = MongoClient("mongodb://localhost:27017/")  
+DB = os.getenv("db")
+client = MongoClient(DB)  
 db = client["ESMS"]  # Database name
 collection = db["Users"]     # Collection name
 
