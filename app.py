@@ -58,7 +58,7 @@ def import_emails():
 
 @app.route('/get-invite-link', methods=['GET'])
 def get_invite_link():
-    email = request.args.get('email')
+    email = request.args.get('email').lower()
 
     # Find the invite by email
     invite = collection.find_one({'email': email})
@@ -74,4 +74,7 @@ def get_invite_link():
         return jsonify({"message": "No invite link found for this email."}), 404
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+    app.run(debug=False, host='0.0.0.0', port=int(os.environ.get('PORT', 5001)))
+    
+#if the email is there
+#compare lowercase
