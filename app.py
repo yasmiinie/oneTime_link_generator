@@ -16,7 +16,7 @@ db = client["ESMS"]  # Database name
 collection = db["Users"]     # Collection name
 
 # Base Slack invite link
-BASE_SLACK_LINK = "https://join.slack.com/t/test-1dh1891/shared_invite/zt-2t3j5ujzn-OY1c_szmY0ah8W0l11pbZQ"  # Replace with your actual link
+BASE_SLACK_LINK = "https://join.slack.com/t/portailhq/shared_invite/zt-2t6cxgdma-4MiaIHE9Y8eqZqQoQ9cxzQ"
 
 def generate_unique_key(email):
     """Create a unique key based on the email."""
